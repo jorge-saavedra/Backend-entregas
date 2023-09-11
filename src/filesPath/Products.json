@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "The blues",
+    "description": "Salut",
+    "price": 2300,
+    "thumbnail": "sin imagen",
+    "code": "TheCd",
+    "stock": 22,
+    "status": true,
+    "category": "categoria 1"
+  },
+  {
+    "id": 2,
+    "title": "The blues",
+    "description": "Encias sangrante",
+    "price": 2400,
+    "thumbnail": "sin imagen",
+    "code": "CHILL",
+    "stock": 21,
+    "status": true,
+    "category": "categoria 2"
+  },
+  {
+    "id": 3,
+    "title": "cosa",
+    "description": "descripcion",
+    "price": 2500,
+    "thumbnails": "sin imagen",
+    "code": "TheCd2",
+    "stock": 42,
+    "category": "categoria 3",
+    "status": true
+  },
+  {
+    "id": 4,
+    "title": "QQ",
+    "description": "descripcion",
+    "price": 2600,
+    "thumbnails": "sin imagen",
+    "code": "TheCd22",
+    "stock": 12,
+    "category": "categoria 4",
+    "status": false
+  },
+  {
+    "id": 5,
+    "title": "RR",
+    "description": "descripcion",
+    "price": 2700,
+    "thumbnails": "sin imagen",
+    "code": "TheCd3",
+    "stock": 12,
+    "category": "categoria 5",
+    "status": false
+  },
+  {
+    "id": 6,
+    "title": "TT",
+    "description": "descripcion",
+    "price": 2800,
+    "thumbnails": "sin imagen",
+    "code": "TheCd12",
+    "stock": 11,
+    "category": "categoria 6",
+    "status": false
+  },
+  {
+    "id": 7,
+    "title": "DD",
+    "description": "descripcion",
+    "price": 2900,
+    "thumbnails": "sin imagen",
+    "code": "TheCd43",
+    "stock": 15,
+    "category": "categoria 7",
+    "status": false
+  },
+  {
+    "id": 8,
+    "title": "BB",
+    "description": "descripcion",
+    "price": 2100,
+    "thumbnails": "sin imagen",
+    "code": "TheCd9",
+    "stock": 13,
+    "category": "categoria 8",
+    "status": false
+  },
+  {
+    "id": 9,
+    "title": "AA",
+    "description": "descripcion",
+    "price": 2200,
+    "thumbnails": "sin imagen",
+    "code": "TheCd1212",
+    "stock": 11,
+    "category": "categoria 9",
+    "status": false
+  },
+  {
+    "id": 10,
+    "title": "EE",
+    "description": "descripcion",
+    "price": 2000,
+    "thumbnails": "sin imagen",
+    "code": "TheCdOne",
+    "stock": 12,
+    "category": "categoria 1",
+    "status": false
+  }
+]
