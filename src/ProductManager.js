@@ -10,6 +10,14 @@ export class ProductManager {
 
     this.products = JSON.parse(fs.readFileSync(this.path));
   }
+  static #lastProductId;
+
+  /**
+   * Devuelve el que será el próximo id de producto.
+   */
+  get nextProductId() {
+    return ProductManager.#lastProductId + 1;
+  }
 
   getProducts() {
     return this.products;
@@ -28,4 +36,43 @@ export class ProductManager {
       throw err;
     }
   }
+
+  deleteProduct = (productId) => {
+    const existingProduct = this.getProductById(productId);
+
+    if (existingProduct) {
+      this.products = this.products.filter(
+        (product) => product.id !== productId
+      );
+
+      this.save();
+
+      return this.products.length;
+    } else {
+      throw new Error(
+        `No product was deleted. Product with id ${productId} was not found.`
+      );
+    }
+  };
+
+  addProduct = (newProduct) => {
+    const existingProduct = this.getProductByCode(newProduct.code);
+
+    if (existingProduct) {
+      throw new Error(
+        `There is already a product with code ${newProduct.code}.`
+      );
+    }
+
+    newProduct.id = ProductManager.#generateNextProductId();
+
+    this.products.push(newProduct);
+
+    this.save();
+
+    // Devuelve el id del nuevo producto como indicador que la
+    // operación fue exitosa.
+    return newProduct.id;
+  };
+  static #generateNextProductId = () => ++ProductManager.#lastProductId;
 }

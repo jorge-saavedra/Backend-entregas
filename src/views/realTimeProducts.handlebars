@@ -1,0 +1,34 @@
+<form action="/api/products" method="post">
+  <label for="title">Title:<input type="text" name="title" id="" /></label>
+  <br />
+  <label for="description">Description:<input
+      type="text"
+      name="description"
+      id=""
+    /></label>
+  <br />
+  <label for="code">Code:<input type="text" name="code" id="" /></label>
+  <br />
+  <label for="stock">Stock:<input type="text" name="stock" id="" /></label>
+  <br />
+  <label for="category">Category:<input
+      type="text"
+      name="category"
+      id=""
+    /></label>
+  <br />
+  <label for="price">Price:<input type="text" name="price" id="" /></label>
+  <br />
+  <button type="submit">Save product</button>
+</form>
+
+<div>
+  {{#each products}}
+    <p> Title : {{this.title}}</p>
+    <p> Description : {{this.description}}</p>
+    <p> Code : {{this.code}}</p>
+  {{/each}}
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
