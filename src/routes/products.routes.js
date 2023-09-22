@@ -6,8 +6,9 @@ import { ProductManager } from "../ProductManager.js";
 const productRouter = Router();
 const pm = new ProductManager();
 
-productRouter.use("/:pid", (req, res, next) => {});
-productRouter.use("/", (req, res) => {});
+// productRouter.use("/:pid", (req, res, next) => {});
+// productRouter.use("/", (req, res) => {});
+
 productRouter.get("/", (req, res) => {});
 // productRouter.get("/:pid", (req, res, next) => {});
 productRouter.delete("/:pid", async (req, res) => {

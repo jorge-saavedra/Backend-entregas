@@ -11,8 +11,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const httpServer = app.listen(8080, () => {
-  console.log("Listen on PORT 8080");
+const PORT = process.env.PORT || 8081 
+const httpServer = app.listen(PORT, () => {
+  console.log("Listen on PORT: ",PORT);
 });
 
 const socketServer = new Server(httpServer);

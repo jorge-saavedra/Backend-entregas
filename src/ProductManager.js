@@ -45,7 +45,7 @@ export class ProductManager {
         (product) => product.id !== productId
       );
 
-      this.save();
+      // this.save();
 
       return { status: true, message: "deleted product" };
     } else {
@@ -69,7 +69,7 @@ export class ProductManager {
 
     this.products.push(newProduct);
 
-    this.save();
+    // this.save();
 
     // Devuelve el id del nuevo producto como indicador que la
     // operación fue exitosa.

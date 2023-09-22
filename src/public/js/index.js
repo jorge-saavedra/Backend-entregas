@@ -18,8 +18,8 @@ socket.on("event_for_all", (data) => {
 let all_btn_delete = document.querySelectorAll(".btn_delete");
 all_btn_delete.forEach((each_button_delete) => {
   each_button_delete.addEventListener("click", () => {
-    fetch(`http://localhost:8080/api/products/${each_button_delete.id}`, {
-      method: "DELETE",
+    fetch(`/api/products/${each_button_delete.id}`, {
+      method: "delete",
     })
       .then(() => console.log((each_button_delete.id, "Delete successful")))
       .catch((err) => console.log(err));
