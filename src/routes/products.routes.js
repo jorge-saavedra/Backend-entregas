@@ -9,16 +9,20 @@ const pm = new ProductManager();
 productRouter.use("/:pid", (req, res, next) => {});
 productRouter.use("/", (req, res) => {});
 productRouter.get("/", (req, res) => {});
-productRouter.get("/:pid", (req, res, next) => {});
-productRouter.delete("/:pid", (req, res, next) => {
+// productRouter.get("/:pid", (req, res, next) => {});
+productRouter.delete("/:pid", async (req, res) => {
+  console.log("llegue");
   try {
-    const product = req.pm.getProductById(req.params.pid);
-    req.pm.deleteProduct(req.params.pid);
-    res.status(200).json({ message: "Deleted product", product: product });
-
-    // Server.emit("deleted-product", req.params.pid);
+    const product = await pm.getProductById(req.params.pid);
+    const response = await pm.deleteProduct(req.params.pid);
+    if (response.status) {
+      res.status(200).json({ message: "Deleted product", product: product.id });
+    } else
+      return res
+        .status(500)
+        .json({ message: "Not Deleted product", product: product.id });
   } catch (error) {
-    next(error);
+    console.log(error);
   }
 });
 

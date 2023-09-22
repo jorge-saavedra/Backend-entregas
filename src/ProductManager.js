@@ -37,7 +37,7 @@ export class ProductManager {
     }
   }
 
-  deleteProduct = (productId) => {
+  deleteProduct = async (productId) => {
     const existingProduct = this.getProductById(productId);
 
     if (existingProduct) {
@@ -47,11 +47,12 @@ export class ProductManager {
 
       this.save();
 
-      return this.products.length;
+      return { status: true, message: "deleted product" };
     } else {
-      throw new Error(
-        `No product was deleted. Product with id ${productId} was not found.`
-      );
+      return { status: false, message: "not deleted product" };
+      // throw new Error(
+      //   `No product was deleted. Product with id ${product.id} was not found.`
+      // );
     }
   };
 
